@@ -4,13 +4,13 @@ import { NavigationContainer } from '@react-navigation/native'
 import RoleBasedNavigator from './RoleBasedNavigator';
 import AuthNavigator from './AuthNavigator';
 import PublicNavigator from './PublicNavigator';
-
-
-const isLoggedIn = true;
-const role = 'admin'; // simulate role; could be 'user' | 'admin' | 'guest' | 'creator'
+import { useAuth } from '../context/AuthContext';
 
 
 const RootNavigator = () => {
+
+  const { isLoggedIn, role } = useAuth()
+
   return (
     <NavigationContainer>
       {
