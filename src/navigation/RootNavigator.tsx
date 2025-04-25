@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import RoleBasedNavigator from './RoleBasedNavigator';
 import AuthNavigator from './AuthNavigator';
 import PublicNavigator from './PublicNavigator';
 import { useAuth } from '../context/AuthContext';
+import { linking } from './linking';
 
 
 const RootNavigator = () => {
@@ -12,10 +13,14 @@ const RootNavigator = () => {
   const { isLoggedIn, role } = useAuth()
 
   return (
-    <NavigationContainer>
+    <NavigationContainer linking={linking}>
       {
-        isLoggedIn ?
-          (role === 'admin' || role === 'user') ?
+        !isLoggedIn ?
+          (
+            <PublicNavigator />
+          )
+          :
+          role === 'admin' || role === 'user' ?
             (
               <RoleBasedNavigator />
             )
@@ -23,10 +28,6 @@ const RootNavigator = () => {
             (
               <AuthNavigator />
             )
-          :
-          (
-            <PublicNavigator />
-          )
       }
     </NavigationContainer>
   )

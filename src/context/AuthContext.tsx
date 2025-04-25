@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useState } from 'react'
+import { createContext, FC, ReactNode, useContext, useState } from 'react'
 import { RoleType } from '../types/roleTypes';
 
 type AuthContextType = {
@@ -14,7 +14,7 @@ interface AuthProviderTypes {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvider = ({ children }: AuthProviderTypes) => {
+export const AuthProvider: FC<AuthProviderTypes> = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [role, setRole] = useState<RoleType>('guest');
 
