@@ -61,7 +61,7 @@ const SafeAreaWrapper: FC<SafeAreaWrapperProps> = ({
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
         <SafeAreaView
-          style={[styles.container, { padding: defaultPadding, backgroundColor:'#f7e1f7' }, style]}
+          style={[styles.container, { padding: defaultPadding }, style]}
           edges={edges}
         >
           {children}
@@ -71,7 +71,7 @@ const SafeAreaWrapper: FC<SafeAreaWrapperProps> = ({
     :
     (
       <SafeAreaView
-        style={[styles.container, { padding: defaultPadding, backgroundColor: '#e6e4e1' }, style]}
+        style={[styles.container, { padding: defaultPadding }, style]}
         edges={edges}
       >
         {children}
