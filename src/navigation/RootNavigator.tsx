@@ -23,7 +23,7 @@ const RootNavigator = () => {
   if (isLoggedIn) {
     initialRoute = role === 'admin' ? 'RoleBased' : 'RoleBased';
   } else {
-    initialRoute = 'Auth';
+    initialRoute = 'RoleBased';
   }
 
   return (

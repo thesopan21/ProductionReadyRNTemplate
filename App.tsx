@@ -1,12 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { initialWindowMetrics, SafeAreaProvider } from 'react-native-safe-area-context'
 import RootNavigator from './src/navigation/RootNavigator'
 import { AuthProvider } from './src/context/AuthContext'
 
 const App = () => {
   return (
-    <SafeAreaProvider>
+    <SafeAreaProvider initialMetrics={initialWindowMetrics}>
       <AuthProvider>
         <RootNavigator />
       </AuthProvider>
@@ -15,5 +14,3 @@ const App = () => {
 }
 
 export default App
-
-const styles = StyleSheet.create({})

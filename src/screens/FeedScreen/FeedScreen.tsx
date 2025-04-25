@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import SafeAreaWrapper from '../../components/SafeAreaWrapper/SafeAreaWrapper'
 
 const FeedScreen = () => {
   return (
-    <View>
+    <SafeAreaWrapper>
       <Text>FeedScreen</Text>
-    </View>
+    </SafeAreaWrapper>
   )
 }
 
