@@ -1,15 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, } from 'react-native'
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import FeedScreen from '../screens/FeedScreen/FeedScreen'
+import HomeScreen from '../screens/HomeScreen/HomeScreen'
+import { PublicStackParamList } from '../types/navigationTypes'
 
 
-const Stack = createNativeStackNavigator()
+const Stack = createNativeStackNavigator<PublicStackParamList>()
 
 const PublicNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name='Feed' component={FeedScreen} />
+      <Stack.Screen name='Home' component={HomeScreen} />
     </Stack.Navigator>
   )
 }
