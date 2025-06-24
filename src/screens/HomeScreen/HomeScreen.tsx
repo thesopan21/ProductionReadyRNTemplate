@@ -8,8 +8,9 @@ const HomeScreen = () => {
   return (
     <SafeAreaWrapper>
       <ThemedView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <ThemedText style={{ fontSize: 18 }}>Home Screen</ThemedText>
-        <ThemedText style={{ fontSize: 18 }}>Welcome to Themed View!</ThemedText>
+        <ThemedText style={{ fontSize: 18 }} selectable selectionColor={'yellowgreen'}>Hello sopan </ThemedText>
+        <ThemedText style={{ fontSize: 18 }}>Welcome to React Native World!</ThemedText>
+        <ThemedText>Home Screen</ThemedText>
       </ThemedView>
     </SafeAreaWrapper>
   )
