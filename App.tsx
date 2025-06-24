@@ -1,9 +1,9 @@
-import React from 'react'
-import { initialWindowMetrics, SafeAreaProvider } from 'react-native-safe-area-context'
-import RootNavigator from './src/navigation/RootNavigator'
-import { AuthProvider } from './src/context/AuthContext'
-import { Provider } from 'react-redux'
-import store from './src/redux/store'
+import React from 'react';
+import { initialWindowMetrics, SafeAreaProvider } from 'react-native-safe-area-context';
+import RootNavigator from './src/navigation/RootNavigator';
+import { AuthProvider } from './src/context/AuthContext';
+import { Provider } from 'react-redux';
+import store from './src/redux/store';
 
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
         </Provider>
       </AuthProvider>
     </SafeAreaProvider>
-  )
-}
+  );
+};
 
-export default App
+export default App;

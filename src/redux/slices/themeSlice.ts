@@ -1,4 +1,4 @@
-import { asyncThunkCreator, createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type ThemeState = {
   mode: 'dark' | 'light';
@@ -9,8 +9,8 @@ type ThemeState = {
 const initialState: ThemeState = {
   mode: 'light',
   error: null,
-  loading: false
-}
+  loading: false,
+};
 
 export const fetchUserThemePreference = createAsyncThunk(
   'theme/fetchUserThemePreference',
@@ -21,45 +21,45 @@ export const fetchUserThemePreference = createAsyncThunk(
         setTimeout(() => {
           const success = true;
           if (success) {
-            resolve({ mode: 'dark' })
+            resolve({ mode: 'dark' });
           } else {
-            reject("Failed to theme preference!")
+            reject('Failed to theme preference!');
           }
-        }, 1000)
-      })
-      return response.mode
+        }, 1000);
+      });
+      return response.mode;
     } catch (error) {
       return rejectWithValue(error instanceof Error ? error.message : 'An error occurred');
     }
   }
-)
+);
 
 const themSlice = createSlice({
   name: 'theme',
   initialState,
   reducers: {
     setTheme: (state, action: PayloadAction<'dark' | 'light'>) => {
-      state.mode = action.payload
+      state.mode = action.payload;
     },
     toggleTheme: (state, action: PayloadAction<'dark' | 'light'>) => {
-      state.mode = state.mode === 'light' ? 'light' : "dark"
+      state.mode = action.payload === 'light' ? 'light' : 'dark';
     },
   },
   extraReducers(builder) {
-    builder.addCase(fetchUserThemePreference.pending, (state, action) => {
+    builder.addCase(fetchUserThemePreference.pending, (state,) => {
       state.loading = true;
       state.error = null;
-    })
+    });
     builder.addCase(fetchUserThemePreference.fulfilled, (state, action) => {
       state.mode = action.payload;
       state.loading = false;
-    })
+    });
     builder.addCase(fetchUserThemePreference.rejected, (state, action) => {
       state.loading = false;
       state.error = action.payload as string;
     });
   },
-})
+});
 
 export const { setTheme, toggleTheme } = themSlice.actions;
 export default themSlice.reducer;

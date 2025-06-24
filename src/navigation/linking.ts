@@ -1,5 +1,5 @@
-import { LinkingOptions } from "@react-navigation/native";
-import { RootStackParamList } from "../types/navigationTypes";
+import { LinkingOptions } from '@react-navigation/native';
+import { RootStackParamList } from '../types/navigationTypes';
 
 export const linking: LinkingOptions<RootStackParamList>  = {
   prefixes: ['awesomeproject://', 'https://awesomeproject.com'],

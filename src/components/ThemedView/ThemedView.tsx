@@ -1,6 +1,6 @@
-import { StyleProp, StyleSheet, View, ViewProps, ViewStyle } from 'react-native'
-import React, { FC } from 'react'
-import { useTheme } from '@react-navigation/native'
+import { StyleProp, View, ViewProps, ViewStyle } from 'react-native';
+import React, { FC } from 'react';
+import { useTheme } from '@react-navigation/native';
 
 interface ThemedViewProps extends ViewProps {
   style?: StyleProp<ViewStyle>
@@ -8,7 +8,7 @@ interface ThemedViewProps extends ViewProps {
 
 const ThemedView: FC<ThemedViewProps> = ({ style, children, ...rest }) => {
 
-  const { colors } = useTheme()
+  const { colors } = useTheme();
 
   return (
     <View
@@ -17,9 +17,8 @@ const ThemedView: FC<ThemedViewProps> = ({ style, children, ...rest }) => {
     >
       {children}
     </View>
-  )
-}
+  );
+};
 
-export default ThemedView
+export default ThemedView;
 
-const styles = StyleSheet.create({})

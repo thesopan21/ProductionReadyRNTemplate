@@ -1,8 +1,8 @@
-import { configureStore, } from "@reduxjs/toolkit";
-import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
-import logger from "redux-logger"; // Import redux-logger for logging actions
+import { configureStore } from '@reduxjs/toolkit';
+import { useDispatch, TypedUseSelectorHook, useSelector } from 'react-redux';
+import logger from 'redux-logger'; // Import redux-logger for logging actions
 import Config from 'react-native-config';
-import themeReducer from './slices/themeSlice'
+import themeReducer from './slices/themeSlice';
 import authReducer from './slices/authSlice';
 
 /**
@@ -32,7 +32,7 @@ const store = configureStore({
     });
 
     // Conditionally add redux-logger only in development mode
-    console.log("node environment:", Config.NODE_ENV)
+    console.log('node environment:', Config.NODE_ENV);
     if (Config.NODE_ENV === 'development') {
       middlewares.push(logger);
     }

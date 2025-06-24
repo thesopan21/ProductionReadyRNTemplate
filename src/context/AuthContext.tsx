@@ -1,4 +1,4 @@
-import { createContext, FC, ReactNode, useContext, useState } from 'react'
+import { createContext, FC, ReactNode, useContext, useState } from 'react';
 import { RoleType } from '../types/roleTypes';
 
 type AuthContextType = {
@@ -18,21 +18,21 @@ export const AuthProvider: FC<AuthProviderTypes> = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [role, setRole] = useState<RoleType>('guest');
 
-  const login = (role: RoleType) => {
+  const login = (r: RoleType) => {
     setIsLoggedIn(true);
-    setRole(role)
-  }
+    setRole(r);
+  };
 
   const logout = () => {
     setIsLoggedIn(false);
-    setRole('guest')
-  }
+    setRole('guest');
+  };
 
   return (
     <AuthContext.Provider value={{ isLoggedIn, login, role, logout }}>
       {children}
     </AuthContext.Provider>
-  )
+  );
 };
 
 
@@ -40,8 +40,8 @@ export const useAuth = () => {
   const context = useContext(AuthContext);
 
   if (!context) {
-    throw new Error('useAuth must be used within AuthProvider')
+    throw new Error('useAuth must be used within AuthProvider');
   }
 
   return context;
-}
+};

@@ -1,6 +1,6 @@
 //================= build in package imports ===========================
-import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //================= my local imports ===========================
@@ -38,7 +38,7 @@ const RootNavigator = () => {
         <RootStack.Screen name="RoleBased" component={RoleBasedNavigator} />
       </RootStack.Navigator>
     </NavigationContainer>
-  )
-}
+  );
+};
 
-export default RootNavigator
+export default RootNavigator;
