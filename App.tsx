@@ -7,11 +7,14 @@ import store from './src/redux/store';
 
 
 const App = () => {
+
+  // const user = 'sopan bhere';
+
   return (
     <SafeAreaProvider initialMetrics={initialWindowMetrics}>
       <AuthProvider>
         <Provider store={store}>
-            <RootNavigator />
+          <RootNavigator />
         </Provider>
       </AuthProvider>
     </SafeAreaProvider>
