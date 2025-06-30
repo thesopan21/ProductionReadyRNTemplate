@@ -1,7 +1,7 @@
 # Project Folder Structure
 
+```bash
 
-```
 YourAppName/
 │
 ├── android/                     # Native Android code
